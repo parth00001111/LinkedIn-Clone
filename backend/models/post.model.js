@@ -2,7 +2,8 @@ import mongoose from "mongoose";
 
 const PostSchema = mongoose.Schema({
     userId: {
-
+        type : mongoose.Schema.Types.ObjectId,
+        ref : "User"
     },
     body: {
         type : String,
@@ -35,5 +36,5 @@ const PostSchema = mongoose.Schema({
     }
 })
 
-const Post = moongoose.model("Post", PostSchema);
+const Post = mongoose.model("Post", PostSchema);
 export default Post;
